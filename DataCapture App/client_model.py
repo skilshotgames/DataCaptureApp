@@ -29,7 +29,6 @@ class ClientModel:
         print(f"Client created successfully! Client Code: {client_code}")
 
     def get_all_clients(self):
-        # Retrieve all clients with their linked contacts count.
         query = """
             SELECT clients.id, clients.name, clients.client_code, 
             COALESCE(COUNT(client_contacts.contact_id), 0) AS linked_contacts
